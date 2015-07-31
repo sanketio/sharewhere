@@ -94,7 +94,7 @@ module.exports = function ( grunt ) {
 		},
 		checktextdomain: {
 			options: {
-				text_domain: 'rtmedia', //Specify allowed domain(s)
+				text_domain: 'wplocation', //Specify allowed domain(s)
 				keywords: [ //List keyword specifications
 					'__:1,2d',
 					'_e:1,2d',
@@ -131,12 +131,12 @@ module.exports = function ( grunt ) {
 					domainPath: 'languages/', // Where to save the POT file.
 					exclude: [ 'node_modules/*' ], // List of files or directories to ignore.
 					mainFile: 'index.php', // Main project file.
-					potFilename: 'rtmedia.po', // Name of the POT file.
+					potFilename: 'wplocation.pot', // Name of the POT file.
 					potHeaders: { // Headers to add to the generated POT file.
 						poedit: true, // Includes common Poedit headers.
-						'Last-Translator': 'rtMedia <rtmedia@rtcamp.com>',
-						'Language-Team': 'rtMedia <rtmedia@rtcamp.com>',
-						'report-msgid-bugs-to': 'http://community.rtcamp.com/c/rtmedia/',
+						'Last-Translator': 'Sanket <sanket.parmar11@gmail.com>',
+						'Language-Team': 'Sanket <sanket.parmar11@gmail.com>',
+						'report-msgid-bugs-to': 'http://ps.com/',
 						'x-poedit-keywordslist': true // Include a list of all possible gettext functions.
 					},
 					type: 'wp-plugin', // Type of project (wp-plugin or wp-theme).
