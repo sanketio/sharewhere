@@ -9,16 +9,12 @@ module.exports = function ( grunt ) {
 		// watch for changes and trigger sass, jshint, uglify and livereload
 		watch: {
 			sass: {
-				files: [ 'app/assets/admin/css/sass/**/*.{scss,sass}', 'app/assets/css/sass/**/*.{scss,sass}' ],
+				files: [ 'includes/assets/admin/css/sass/**/*.{scss,sass}' ],
 				tasks: [ 'sass' ]
 			},
 			autoprefixer: {
-				files: [ 'app/assets/admin/css/*.css', 'app/assets/css/*css' ],
+				files: [ 'includes/assets/admin/css/*.css' ],
 				tasks: [ 'autoprefixer' ]
-			},
-			js: {
-				files: [ '<%= uglify.frontend.src %>', '<%= uglify.backend.src %>' ],
-				tasks: [ 'uglify' ]
 			},
 			livereload: {
 				// Here we watch the files the sass task will compile to
@@ -35,9 +31,7 @@ module.exports = function ( grunt ) {
 					sourcemap: 'none'
 				},
 				files: {
-					'app/assets/admin/css/admin.css': 'app/assets/admin/css/sass/admin.scss',
-					'app/assets/admin/css/widget.css': 'app/assets/admin/css/sass/widget.scss',
-					'app/assets/css/rtmedia.css': 'app/assets/css/sass/rtmedia.scss',
+					'includes/assets/admin/css/admin.css': 'includes/assets/admin/css/sass/admin.scss'
 				}
 			},
 			minify: {
@@ -46,9 +40,7 @@ module.exports = function ( grunt ) {
 					sourcemap: 'none'
 				},
 				files: {
-					'app/assets/admin/css/admin.min.css': 'app/assets/admin/css/sass/admin.scss',
-					'app/assets/admin/css/widget.min.css': 'app/assets/admin/css/sass/widget.scss',
-					'app/assets/css/rtmedia.min.css': 'app/assets/css/sass/rtmedia.scss'
+					'includes/assets/admin/css/admin.min.css': 'includes/assets/admin/css/sass/admin.scss',
 				}
 			}
 		},
@@ -61,35 +53,9 @@ module.exports = function ( grunt ) {
 					flatten: true
 				},
 				files: {
-					'app/assets/admin/css/admin.css': 'app/assets/admin/css/admin.css',
-					'app/assets/admin/css/admin.min.css': 'app/assets/admin/css/admin.min.css',
-					'app/assets/admin/css/widget.css': 'app/assets/admin/css/widget.css',
-					'app/assets/admin/css/widget.min.css': 'app/assets/admin/css/widget.min.css',
-					'app/assets/css/rtmedia.css': 'app/assets/css/rtmedia.css',
-					'app/assets/css/rtmedia.min.css': 'app/assets/css/rtmedia.min.css'
+					'includes/assets/admin/css/admin.css': 'includes/assets/admin/css/admin.css',
+					'includes/assets/admin/css/admin.min.css': 'includes/assets/admin/css/admin.min.css'
 				}
-			}
-		},
-		// Uglify Ref. https://npmjs.org/package/grunt-contrib-uglify
-		uglify: {
-			options: {
-				banner: '/*! \n * rtMedia JavaScript Library \n * @package rtMedia \n */\n',
-			},
-			frontend: {
-				src: [
-					'app/assets/js/vendors/magnific-popup.js',
-					'app/assets/admin/js/vendors/tabs.js',
-					'app/assets/js/rtMedia.js'
-				],
-				dest: 'app/assets/js/rtmedia.min.js'
-			},
-			backend: {
-				src: [
-					'app/assets/admin/js/vendors/tabs.js',
-					'app/assets/admin/js/scripts.js',
-					'app/assets/admin/js/settings.js'
-				],
-				dest: 'app/assets/admin/js/admin.min.js'
 			}
 		},
 		checktextdomain: {
@@ -147,5 +113,5 @@ module.exports = function ( grunt ) {
 
 	} );
 	// register task
-	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'uglify', 'checktextdomain', 'makepot', 'watch' ] );
+	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'checktextdomain', 'makepot', 'watch' ] );
 };
