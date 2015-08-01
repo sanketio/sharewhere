@@ -31,7 +31,7 @@ module.exports = function ( grunt ) {
 					sourcemap: 'none'
 				},
 				files: {
-					'includes/assets/admin/css/admin.css': 'includes/assets/admin/css/sass/admin.scss'
+					'includes/assets/admin/css/wpls-admin.css': 'includes/assets/admin/css/sass/wpls-admin.scss'
 				}
 			},
 			minify: {
@@ -40,7 +40,7 @@ module.exports = function ( grunt ) {
 					sourcemap: 'none'
 				},
 				files: {
-					'includes/assets/admin/css/admin.min.css': 'includes/assets/admin/css/sass/admin.scss',
+					'includes/assets/admin/css/wpls-admin.min.css': 'includes/assets/admin/css/sass/wpls-admin.scss',
 				}
 			}
 		},
@@ -53,8 +53,8 @@ module.exports = function ( grunt ) {
 					flatten: true
 				},
 				files: {
-					'includes/assets/admin/css/admin.css': 'includes/assets/admin/css/admin.css',
-					'includes/assets/admin/css/admin.min.css': 'includes/assets/admin/css/admin.min.css'
+					'includes/assets/admin/css/wpls-admin.css': 'includes/assets/admin/css/wpls-admin.css',
+					'includes/assets/admin/css/wpls-admin.min.css': 'includes/assets/admin/css/wpls-admin.min.css'
 				}
 			}
 		},

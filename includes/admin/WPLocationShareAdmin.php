@@ -22,7 +22,7 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		public function wpls_includes_script_styles() {
 			$suffix = ( function_exists( 'wpls_get_script_style_suffix' ) ) ? wpls_get_script_style_suffix() : '.min';
 
-			wp_enqueue_style( 'wpls-admin', WP_LOCATION_SHARE_URL . 'includes/assets/admin/css/admin.min.css', false, WP_LOCATION_SHARE_VERSION );
+			wp_enqueue_style( 'wpls-admin', WP_LOCATION_SHARE_URL . 'includes/assets/admin/css/wpls-admin' . $suffix . '.css', false, WP_LOCATION_SHARE_VERSION );
 		}
 
 		/*
