@@ -16,6 +16,10 @@ module.exports = function ( grunt ) {
 				files: [ 'includes/assets/admin/css/*.css' ],
 				tasks: [ 'autoprefixer' ]
 			},
+			js: {
+				files: [ '<%= uglify.backend.src %>' ],
+				tasks: [ 'uglify' ]
+			},
 			livereload: {
 				// Here we watch the files the sass task will compile to
 				// These files are sent to the live reload server after sass compiles to them
@@ -56,6 +60,18 @@ module.exports = function ( grunt ) {
 					'includes/assets/admin/css/wpls-admin.css': 'includes/assets/admin/css/wpls-admin.css',
 					'includes/assets/admin/css/wpls-admin.min.css': 'includes/assets/admin/css/wpls-admin.min.css'
 				}
+			}
+		},
+		// Uglify Ref. https://npmjs.org/package/grunt-contrib-uglify
+		uglify: {
+			options: {
+				banner: '/* \n * WordPress Location Share \n * @package WPLS \n */\n',
+			},
+			backend: {
+				src: [
+					'includes/assets/admin/js/wpls-admin.js'
+				],
+				dest: 'includes/assets/admin/js/wpls-admin.min.js'
 			}
 		},
 		checktextdomain: {
@@ -113,5 +129,5 @@ module.exports = function ( grunt ) {
 
 	} );
 	// register task
-	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'checktextdomain', 'makepot', 'watch' ] );
+	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'uglify', 'checktextdomain', 'makepot', 'watch' ] );
 };
