@@ -37,6 +37,8 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		 */
 		public function wpls_includes_scripts() {
 			wp_enqueue_script( 'wpls-admin', WP_LOCATION_SHARE_URL . 'includes/assets/admin/js/wpls-admin' . $this->suffix . '.js', array(), WP_LOCATION_SHARE_VERSION );
+			wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU&sensor=false' );
+			wp_enqueue_script( 'google-jsapi', 'https://www.google.com/jsapi' );
 		}
 
 		/*
@@ -44,11 +46,12 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		 */
 		public function wpls_add_location_button() {
 			$wpls_add_location_button_text = apply_filters( 'wpls_add_location_button_text', __( 'Add Location', 'wplocation' ) );
-
-			echo '<a href="#TB_inline?width=700&inlineId=wpls-google-map-popup" title="Add Location" id="wp-location-share-map" class="thickbox button">';
-			echo '<i class="dashicons dashicons-location"></i>';
-			echo $wpls_add_location_button_text;
-			echo '</a>';
+			?>
+			<a href="#TB_inline?width=752&inlineId=wpls-google-map-popup" title="<?php echo $wpls_add_location_button_text; ?>" id="wp-location-share-map" class="thickbox button">
+				<i class="dashicons dashicons-location"></i>
+				<?php echo $wpls_add_location_button_text; ?>
+			</a>
+			<?php
 		}
 
 		/*
@@ -56,10 +59,8 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		 */
 		public function wpls_google_map_div() {
 			?>
-			<div id="wpls-google-map-container">
-				<div id="wpls-google-map-popup" style="display: none;">
-					<div class="wrap">Hi</div>
-				</div>
+			<div id="wpls-google-map-popup" style="display: none;">
+				<div class="wrap" id="wpls-google-map">Hi</div>
 			</div>
 			<?php
 		}

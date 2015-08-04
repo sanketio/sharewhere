@@ -7,6 +7,6 @@
   color: #82878c;
 }
 
-#TB_title {
-  height: 56px;
+#TB_window {
+  top: 40px !important;
 }
