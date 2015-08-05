@@ -30,14 +30,16 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		 */
 		public function wpls_includes_styles() {
 			wp_enqueue_style( 'wpls-admin', WP_LOCATION_SHARE_URL . 'includes/assets/admin/css/wpls-admin' . $this->suffix . '.css', false, WP_LOCATION_SHARE_VERSION );
+			wp_enqueue_style( 'wpls-magnific-popup-admin', WP_LOCATION_SHARE_URL . 'includes/assets/lib/magnific-popup/magnific-popup.css', false, WP_LOCATION_SHARE_VERSION );
 		}
 
 		/*
 		 * Enqueue Admin Scripts
 		 */
 		public function wpls_includes_scripts() {
+			wp_enqueue_script( 'wpls-magnific-popup-admin', WP_LOCATION_SHARE_URL . 'includes/assets/lib/magnific-popup/jquery.magnific-popup' . $this->suffix . '.js', array(), WP_LOCATION_SHARE_VERSION );
 			wp_enqueue_script( 'wpls-admin', WP_LOCATION_SHARE_URL . 'includes/assets/admin/js/wpls-admin' . $this->suffix . '.js', array(), WP_LOCATION_SHARE_VERSION );
-			wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU&sensor=false' );
+			wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' );
 			wp_enqueue_script( 'google-jsapi', 'https://www.google.com/jsapi' );
 		}
 
@@ -47,7 +49,7 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		public function wpls_add_location_button() {
 			$wpls_add_location_button_text = apply_filters( 'wpls_add_location_button_text', __( 'Add Location', 'wplocation' ) );
 			?>
-			<a href="#TB_inline?width=752&inlineId=wpls-google-map-popup" title="<?php echo $wpls_add_location_button_text; ?>" id="wp-location-share-map" class="thickbox button">
+			<a href="#wpls-google-map-container" title="<?php echo $wpls_add_location_button_text; ?>" id="wp-location-share-map" class="button">
 				<i class="dashicons dashicons-location"></i>
 				<?php echo $wpls_add_location_button_text; ?>
 			</a>
@@ -59,8 +61,8 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		 */
 		public function wpls_google_map_div() {
 			?>
-			<div id="wpls-google-map-popup" style="display: none;">
-				<div class="wrap" id="wpls-google-map">Hi</div>
+			<div id="wpls-google-map-container" class="mfp-hide">
+				<div id="wpls-google-map">Sanket</div>
 			</div>
 			<?php
 		}

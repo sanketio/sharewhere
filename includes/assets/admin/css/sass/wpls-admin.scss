@@ -8,10 +8,11 @@
 	}
 }
 
-#TB_window {
-	top: 40px !important;
+#wpls-google-map-container {
+	height: 100%;
 }
 
-#TB_title {
-
+#wpls-google-map {
+	height: calc( 100% - 100px );
+	margin: 30px 20px 20px 20px;
 }
