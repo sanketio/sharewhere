@@ -60,9 +60,19 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		 * Google map div for modal popup
 		 */
 		public function wpls_google_map_div() {
+			$wpls_page_flag = false;
+
+			if( isset( $_GET ) && isset( $_GET[ 'post_type' ] ) && $_GET[ 'post_type' ] == 'page' ) {
+				$wpls_page_flag = true;
+			}
+
+			$wpls_insert_button_text = ( $wpls_page_flag ) ? __( 'Insert into page', 'wplocation' ) : __( 'Insert into post', 'wplocation' ) ;
 			?>
 			<div id="wpls-google-map-container" class="mfp-hide">
-				<div id="wpls-google-map">Sanket</div>
+				<div id="wpls-google-map"></div>
+				<div id="wpls-insert-map">
+					<a href="#" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
+				</div>
 			</div>
 			<?php
 		}
