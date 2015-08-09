@@ -23,12 +23,11 @@ var infowindow;
 			} );
 		},
 		wpls_google_map_intialize: function() {
-			var pune = new google.maps.LatLng( 18.5204393, 73.8567347 );
-
+			var pune 	  = new google.maps.LatLng( 18.5204393, 73.8567347 );
 			var myOptions = {
-				zoom	  : 15,
-				mapTypeId : google.maps.MapTypeId.ROADMAP,
-				streetViewControl: false
+				zoom	  		  : 17,
+				mapTypeId 		  : google.maps.MapTypeId.ROADMAP,
+				streetViewControl : false
 			};
 			var map = new google.maps.Map( document.getElementById( "wpls-google-map" ), myOptions );
 
@@ -37,9 +36,6 @@ var infowindow;
 				browserSupportFlag = true;
 
 				navigator.geolocation.getCurrentPosition( function( position ) {
-					//initialLocation = new google.maps.LatLng( position.coords.latitude, position.coords.longitude );
-					//
-					//map.setCenter( initialLocation );
 					wpls_object.wpls_markOutLocation( map, position.coords.latitude, position.coords.longitude );
 				}, function() {
 					wpls_object.wpls_handle_no_geo_location( browserSupportFlag, pune );
@@ -51,6 +47,8 @@ var infowindow;
 
 				wpls_object.wpls_handle_no_geo_location( browserSupportFlag, pune );
 			}
+
+			wpls_object.wpls_search_google_map( map );
 		},
 		wpls_handle_no_geo_location: function( wpls_browser_support_flag, wpls_location ) {
 			if (wpls_browser_support_flag == true) {
@@ -62,22 +60,25 @@ var infowindow;
 
 				initialLocation = wpls_location;
 			}
+
 			map.setCenter( initialLocation );
 		},
 		wpls_markOutLocation: function( wpls_map, lattitude, longitude ) {
-			geocoder = new google.maps.Geocoder();
-			infowindow = new google.maps.InfoWindow();
+			geocoder 	= new google.maps.Geocoder();
+			infowindow  = new google.maps.InfoWindow();
 			var latLong = new google.maps.LatLng( lattitude, longitude );
 
 			geocoder.geocode( { 'location': latLong }, function( results, status ) {
 				if( status == google.maps.GeocoderStatus.OK ) {
 					if( results[ 1 ] ) {
-						wpls_map.setZoom( 15 );
+						wpls_map.setCenter( latLong, 17 );
+
 						marker = new google.maps.Marker( {
 							position: latLong,
 							draggable: true,
 							map: wpls_map
 						} );
+
 						infowindow.setContent(results[ 1 ].formatted_address );
 						infowindow.open( wpls_map, marker );
 
@@ -91,7 +92,7 @@ var infowindow;
 
 						google.maps.event.addListener( wpls_map, 'click', function( event ) {
 							wpls_object.wpls_geocodePosition( wpls_map, event.latLng );
-						});
+						} );
 					} else {
 						window.alert( 'No results found' );
 					}
@@ -99,8 +100,6 @@ var infowindow;
 					window.alert( 'Geocoder failed due to: ' + status );
 				}
 			} );
-
-			wpls_map.setCenter( latLong, 15 );
 		},
 		wpls_geocodePosition: function( wpls_map, pos ) {
 			geocoder.geocode( { latLng: pos }, function( responses ) {
@@ -109,9 +108,35 @@ var infowindow;
 				} else {
 					marker.formatted_address = 'Cannot determine address at this location.';
 				}
+
+				wpls_map.setCenter( pos, 17 );
+
 				marker.setPosition( pos );
+
 				infowindow.setContent( marker.formatted_address );
 				infowindow.open( wpls_map, marker );
+			} );
+		},
+		wpls_search_google_map: function( wpls_map ) {
+			var input = ( document.getElementById('wpls-map-search'));
+			var autocomplete = new google.maps.places.Autocomplete(input);
+
+			autocomplete.bindTo('bounds', wpls_map);
+
+			google.maps.event.addListener(autocomplete, 'place_changed', function() {
+				var place = autocomplete.getPlace();
+
+				if ( !place.geometry ) {
+					window.alert("Autocomplete's returned place contains no geometry");
+
+					return;
+				}
+
+				var lat    = place.geometry.location[ 'G' ];
+				var lng    = place.geometry.location[ 'K' ];
+				var latlng = new google.maps.LatLng( lat, lng );
+
+				wpls_object.wpls_geocodePosition( wpls_map, latlng );
 			} );
 		}
 	};

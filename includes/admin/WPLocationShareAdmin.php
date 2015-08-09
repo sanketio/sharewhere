@@ -39,7 +39,7 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 		public function wpls_includes_scripts() {
 			wp_enqueue_script( 'wpls-magnific-popup-admin', WP_LOCATION_SHARE_URL . 'includes/assets/lib/magnific-popup/jquery.magnific-popup' . $this->suffix . '.js', array(), WP_LOCATION_SHARE_VERSION );
 			wp_enqueue_script( 'wpls-admin', WP_LOCATION_SHARE_URL . 'includes/assets/admin/js/wpls-admin' . $this->suffix . '.js', array(), WP_LOCATION_SHARE_VERSION );
-			wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' );
+			wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false' );
 			wp_enqueue_script( 'google-jsapi', 'https://www.google.com/jsapi' );
 		}
 
@@ -69,6 +69,7 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 			$wpls_insert_button_text = ( $wpls_page_flag ) ? __( 'Insert into page', 'wplocation' ) : __( 'Insert into post', 'wplocation' ) ;
 			?>
 			<div id="wpls-google-map-container" class="mfp-hide">
+				<input id="wpls-map-search" class="wpls-place-search" type="text" placeholder="<?php echo __( 'Search Place', 'wplocation' ); ?>" />
 				<div id="wpls-google-map"></div>
 				<div id="wpls-insert-map">
 					<a href="#" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
