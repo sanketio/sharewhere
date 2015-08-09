@@ -4,6 +4,7 @@ var browserSupportFlag =  new Boolean();
 var marker;
 var geocoder;
 var infowindow;
+var wpls_magnific_popup;
 
 ( function( jq ) {
 
@@ -21,6 +22,8 @@ var infowindow;
 					}
 				}
 			} );
+
+			wpls_magnific_popup = jq.magnificPopup.instance;
 		},
 		wpls_google_map_intialize: function() {
 			var pune 	  = new google.maps.LatLng( 18.5204393, 73.8567347 );
@@ -79,8 +82,10 @@ var infowindow;
 							map: wpls_map
 						} );
 
-						infowindow.setContent(results[ 1 ].formatted_address );
+						infowindow.setContent( results[ 1 ].formatted_address );
 						infowindow.open( wpls_map, marker );
+
+						wpls_object.wpls_store_location( results[ 1 ].formatted_address );
 
 						google.maps.event.addListener( marker, 'dragend', function( event ) {
 							wpls_object.wpls_geocodePosition( wpls_map, marker.getPosition() );
@@ -105,6 +110,7 @@ var infowindow;
 			geocoder.geocode( { latLng: pos }, function( responses ) {
 				if( responses && responses.length > 0 ) {
 					marker.formatted_address = responses[ 0 ].formatted_address;
+					wpls_object.wpls_store_location( marker.formatted_address );
 				} else {
 					marker.formatted_address = 'Cannot determine address at this location.';
 				}
@@ -118,7 +124,7 @@ var infowindow;
 			} );
 		},
 		wpls_search_google_map: function( wpls_map ) {
-			var input = ( document.getElementById('wpls-map-search'));
+			var input 		 = ( document.getElementById('wpls-map-search'));
 			var autocomplete = new google.maps.places.Autocomplete(input);
 
 			autocomplete.bindTo('bounds', wpls_map);
@@ -138,11 +144,26 @@ var infowindow;
 
 				wpls_object.wpls_geocodePosition( wpls_map, latlng );
 			} );
+		},
+		wpls_store_location: function( address ) {
+			jq( '#wpls-store-location' ).val( address );
+		},
+		wpls_append_location: function() {
+			var location = jq( '#wpls-store-location').val();
+			var link 	 = '<a title="' + location + '" href="https://google.com/maps?q=' + decodeURIComponent( location ) + '" target="_blank">' + location + '</a>';
+
+			jq( link ).appendTo( jq( '#wp-content-editor-container iframe' ).contents().find( 'body' ) );
+
+			wpls_magnific_popup.close();
 		}
 	};
 
 	jq( 'document' ).ready( function() {
 		wpls_object.init();
+
+		jq( '#wpls-insert-button' ).click( function() {
+			wpls_object.wpls_append_location();
+		} );
 	} );
 
 } ) ( jQuery );

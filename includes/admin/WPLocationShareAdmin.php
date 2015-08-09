@@ -72,12 +72,12 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 				<input id="wpls-map-search" class="wpls-place-search" type="text" placeholder="<?php echo __( 'Search Place', 'wplocation' ); ?>" />
 				<div id="wpls-google-map"></div>
 				<div id="wpls-insert-map">
-					<a href="#" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
+					<a href="#" id="wpls-insert-button" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
+					<input type="hidden" id="wpls-store-location" />
 				</div>
 			</div>
 			<?php
 		}
-
 	}
 
 }
