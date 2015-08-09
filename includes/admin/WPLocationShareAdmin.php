@@ -71,12 +71,12 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 			<div id="wpls-google-map-container" class="mfp-hide">
 				<div id="wpls-google-map"></div>
 				<div id="wpls-insert-map">
-					<a href="#" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
+					<a href="#" id="wpls-insert-button" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
+					<input type="hidden" id="wpls-store-location" />
 				</div>
 			</div>
 			<?php
 		}
-
 	}
 
 }
