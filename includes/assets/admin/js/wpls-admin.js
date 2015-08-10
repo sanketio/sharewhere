@@ -152,7 +152,7 @@ var wpls_magnific_popup;
 			var location = jq( '#wpls-store-location').val();
 			var link 	 = '<a title="' + location + '" href="https://google.com/maps?q=' + decodeURIComponent( location ) + '" target="_blank">' + location + '</a>';
 
-			jq( link ).appendTo( jq( '#wp-content-editor-container iframe' ).contents().find( 'body' ) );
+			jq( link ).appendTo( jq( '#wp-content-editor-container iframe' ).contents().find( 'body p:last-child' ) );
 
 			wpls_magnific_popup.close();
 		}

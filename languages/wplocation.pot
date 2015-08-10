@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Location Share 1.0\n"
 "Report-Msgid-Bugs-To: http://ps.com/\n"
-"POT-Creation-Date: 2015-08-09 17:38:22+00:00\n"
+"POT-Creation-Date: 2015-08-10 18:07:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,15 +28,15 @@ msgstr ""
 msgid "Add Location"
 msgstr ""
 
-#: includes/admin/WPLocationShareAdmin.php:69
+#: includes/admin/WPLocationShareAdmin.php:71
 msgid "Insert into page"
 msgstr ""
 
-#: includes/admin/WPLocationShareAdmin.php:69
+#: includes/admin/WPLocationShareAdmin.php:71
 msgid "Insert into post"
 msgstr ""
 
-#: includes/admin/WPLocationShareAdmin.php:72
+#: includes/admin/WPLocationShareAdmin.php:74
 msgid "Search Place"
 msgstr ""
 

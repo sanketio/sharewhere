@@ -64,6 +64,8 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 
 			if( isset( $_GET ) && isset( $_GET[ 'post_type' ] ) && $_GET[ 'post_type' ] == 'page' ) {
 				$wpls_page_flag = true;
+			} else if( isset( $_GET ) && isset( $_GET[ 'post' ] ) && ( get_post_type( $_GET[ 'post' ] ) == 'page' ) ) {
+				$wpls_page_flag = true;
 			}
 
 			$wpls_insert_button_text = ( $wpls_page_flag ) ? __( 'Insert into page', 'wplocation' ) : __( 'Insert into post', 'wplocation' ) ;
