@@ -5,6 +5,7 @@ var marker;
 var geocoder;
 var infowindow;
 var wpls_magnific_popup;
+var wpls_location_types = new Array();
 
 ( function( jq ) {
 
@@ -82,10 +83,10 @@ var wpls_magnific_popup;
 							map: wpls_map
 						} );
 
-						infowindow.setContent( results[ 1 ].formatted_address );
+						infowindow.setContent( results[ 0 ].formatted_address );
 						infowindow.open( wpls_map, marker );
 
-						wpls_object.wpls_store_location( results[ 1 ].formatted_address );
+						wpls_object.wpls_store_location( results[ 0 ] );
 
 						google.maps.event.addListener( marker, 'dragend', function( event ) {
 							wpls_object.wpls_geocodePosition( wpls_map, marker.getPosition() );
@@ -110,7 +111,8 @@ var wpls_magnific_popup;
 			geocoder.geocode( { latLng: pos }, function( responses ) {
 				if( responses && responses.length > 0 ) {
 					marker.formatted_address = responses[ 0 ].formatted_address;
-					wpls_object.wpls_store_location( marker.formatted_address );
+
+					wpls_object.wpls_store_location( responses[ 0 ] );
 				} else {
 					marker.formatted_address = 'Cannot determine address at this location.';
 				}
@@ -146,15 +148,51 @@ var wpls_magnific_popup;
 			} );
 		},
 		wpls_store_location: function( address ) {
-			jq( '#wpls-store-location' ).val( address );
+			var wpls_city, wpls_state, wpls_country;
+
+			for( var i =0; i < address.address_components.length; i++ ) {
+				if( address.address_components[ i ].types[ 0 ] == 'locality' ) {
+					wpls_city = address.address_components[ i ];
+				} else if( address.address_components[ i ].types[ 0 ] == 'administrative_area_level_1' ) {
+					wpls_state = address.address_components[ i ];
+				} else if( address.address_components[ i ].types[ 0 ] == 'country' ) {
+					wpls_country = address.address_components[ i ];
+				}
+			}
+
+			jq( '#wpls-city' ).val( wpls_city.long_name );
+			jq( '#wpls-state' ).val( wpls_state.long_name );
+			jq( '#wpls-country' ).val( wpls_country.long_name );
+			jq( '#wpls-store-location' ).val( address.formatted_address );
 		},
-		wpls_append_location: function() {
-			var location = jq( '#wpls-store-location').val();
+		wpls_append_location: function( wpls_location_type ) {
+			if( wpls_location_type == '' ) {
+				wpls_location_type = 'full';
+			}
+
+			var location = wpls_object.wpls_final_location( wpls_location_type );
 			var link 	 = '<a title="' + location + '" href="https://google.com/maps?q=' + decodeURIComponent( location ) + '" target="_blank">' + location + '</a>';
 
 			jq( link ).appendTo( jq( '#wp-content-editor-container iframe' ).contents().find( 'body p:last-child' ) );
 
 			wpls_magnific_popup.close();
+		},
+		wpls_final_location: function( wpls_location_type ) {
+			var wpls_city = jq( '#wpls-city' ).val();
+			var wpls_state = jq( '#wpls-state' ).val();
+			var wpls_country = jq( '#wpls-country' ).val();
+			var wpls_full_address = jq( '#wpls-store-location' ).val();
+
+			wpls_location_types[ 'city' ] = wpls_city;
+			wpls_location_types[ 'state' ] = wpls_state;
+			wpls_location_types[ 'country' ] = wpls_country;
+			wpls_location_types[ 'city-state' ] = wpls_city + ', ' + wpls_state;
+			wpls_location_types[ 'city-country' ] = wpls_city + ', ' + wpls_country;
+			wpls_location_types[ 'state-country' ] = wpls_state + ', ' + wpls_country;
+			wpls_location_types[ 'city-state-country' ] = wpls_city + ', ' + wpls_state + ', ' + wpls_country;
+			wpls_location_types[ 'full' ] = wpls_full_address;
+
+			return wpls_location_types[ wpls_location_type ];
 		}
 	};
 
@@ -162,7 +200,9 @@ var wpls_magnific_popup;
 		wpls_object.init();
 
 		jq( '#wpls-insert-button' ).click( function() {
-			wpls_object.wpls_append_location();
+			var wpls_location_type = jq( '#wpls-location-type' ).val();
+
+			wpls_object.wpls_append_location( wpls_location_type );
 		} );
 	} );
 

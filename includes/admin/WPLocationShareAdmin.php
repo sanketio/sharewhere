@@ -74,8 +74,22 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 				<input id="wpls-map-search" class="wpls-place-search" type="text" placeholder="<?php echo __( 'Search Place', 'wplocation' ); ?>" />
 				<div id="wpls-google-map"></div>
 				<div id="wpls-insert-map">
+					<select id="wpls-location-type">
+						<option value="">Select Location type</option>
+						<option value="city">City</option>
+						<option value="state">State</option>
+						<option value="country">Country</option>
+						<option value="city-state">City + State</option>
+						<option value="city-country">City + Country</option>
+						<option value="state-country">State + Country</option>
+						<option value="city-state-country">City + State + Country</option>
+						<option value="full">Full Address</option>
+					</select>
 					<a href="#" id="wpls-insert-button" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
 					<input type="hidden" id="wpls-store-location" />
+					<input type="hidden" id="wpls-city" />
+					<input type="hidden" id="wpls-state" />
+					<input type="hidden" id="wpls-country" />
 				</div>
 			</div>
 			<?php
