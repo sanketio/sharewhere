@@ -58,11 +58,11 @@ var wpls_location_types = new Array();
 		},
 		wpls_handle_no_geo_location: function( wpls_browser_support_flag, wpls_location ) {
 			if (wpls_browser_support_flag == true) {
-				alert( "Geolocation service failed." );
+				alert( wpls_admin_strings.wpls_geolocation_service_failed );
 
 				initialLocation = wpls_location;
 			} else {
-				alert( "Your browser doesn't support geolocation. We've placed you in Pune, India." );
+				alert( wpls_admin_strings.wpls_geolocation_not_supported_browser );
 
 				initialLocation = wpls_location;
 			}
@@ -102,10 +102,10 @@ var wpls_location_types = new Array();
 							wpls_object.wpls_geocodePosition( wpls_map, event.latLng );
 						} );
 					} else {
-						window.alert( 'No results found' );
+						window.alert( wpls_admin_strings.wpls_no_result_found );
 					}
 				} else {
-					window.alert( 'Geocoder failed due to: ' + status );
+					window.alert( wpls_admin_strings.wpls_geocoder_failed + ' ' + status );
 				}
 			} );
 		},
@@ -116,7 +116,7 @@ var wpls_location_types = new Array();
 
 					wpls_object.wpls_store_location( responses[ 0 ] );
 				} else {
-					marker.formatted_address = 'Cannot determine address at this location.';
+					marker.formatted_address = wpls_admin_strings.wpls_not_determine_location;
 				}
 
 				wpls_map.setCenter( pos, 17 );
@@ -137,7 +137,7 @@ var wpls_location_types = new Array();
 				var place = autocomplete.getPlace();
 
 				if ( !place.geometry ) {
-					window.alert("Autocomplete's returned place contains no geometry");
+					window.alert( wpls_admin_strings.wpls_autocomplete_no_geometry );
 
 					return;
 				}
@@ -169,7 +169,7 @@ var wpls_location_types = new Array();
 		},
 		wpls_append_location: function( wpls_location_type ) {
 			if( wpls_location_type == '' ) {
-				var wpls_confirm = confirm( "You haven't selected 'Location Type'.\n\nAre you sure you want to go with 'Full Address'?" );
+				var wpls_confirm = confirm( wpls_admin_strings.wpls_full_address_confirmation );
 
 				if( wpls_confirm ) {
 					wpls_location_type = 'full';

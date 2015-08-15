@@ -76,7 +76,7 @@ module.exports = function ( grunt ) {
 		},
 		checktextdomain: {
 			options: {
-				text_domain: 'wplocation', //Specify allowed domain(s)
+				text_domain: 'wpls', //Specify allowed domain(s)
 				keywords: [ //List keyword specifications
 					'__:1,2d',
 					'_e:1,2d',
@@ -113,7 +113,7 @@ module.exports = function ( grunt ) {
 					domainPath: 'languages/', // Where to save the POT file.
 					exclude: [ 'node_modules/*' ], // List of files or directories to ignore.
 					mainFile: 'index.php', // Main project file.
-					potFilename: 'wplocation.pot', // Name of the POT file.
+					potFilename: 'wpls.pot', // Name of the POT file.
 					potHeaders: { // Headers to add to the generated POT file.
 						poedit: true, // Includes common Poedit headers.
 						'Last-Translator': 'Sanket <sanket.parmar11@gmail.com>',

@@ -41,13 +41,25 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 			wp_enqueue_script( 'wpls-admin', WP_LOCATION_SHARE_URL . 'includes/assets/admin/js/wpls-admin' . $this->suffix . '.js', array(), WP_LOCATION_SHARE_VERSION );
 			wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false' );
 			wp_enqueue_script( 'google-jsapi', 'https://www.google.com/jsapi' );
+
+			$wpls_admin_localize_string = array(
+				'wpls_geolocation_service_failed' => __( 'Geolocation service failed.', 'wpls' ),
+				'wpls_geolocation_not_supported_browser' => __( "Your browser doesn't support geolocation. We've placed you in Pune, India.", 'wpls' ),
+				'wpls_no_result_found' => __( 'No results found', 'wpls' ),
+				'wpls_geocoder_failed' => __( 'Geocoder failed due to:', 'wpls' ),
+				'wpls_not_determine_location' => __( 'Cannot determine address at this location.', 'wpls' ),
+				'wpls_autocomplete_no_geometry' => __( "Autocomplete's returned place contains no geometry", 'wpls' ),
+				'wpls_full_address_confirmation' => __( "You haven't selected 'Location Type'.\n\nAre you sure you want to go with 'Full Address'?", 'wpls' )
+			);
+
+			wp_localize_script( "wpls-admin", 'wpls_admin_strings', $wpls_admin_localize_string );
 		}
 
 		/*
 		 * Adding location button next to media button
 		 */
 		public function wpls_add_location_button() {
-			$wpls_add_location_button_text = apply_filters( 'wpls_add_location_button_text', __( 'Add Location', 'wplocation' ) );
+			$wpls_add_location_button_text = apply_filters( 'wpls_add_location_button_text', __( 'Add Location', 'wpls' ) );
 			?>
 			<a href="#wpls-google-map-container" title="<?php echo $wpls_add_location_button_text; ?>" id="wp-location-share-map" class="button">
 				<i class="dashicons dashicons-location"></i>
@@ -68,22 +80,22 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 				$wpls_page_flag = true;
 			}
 
-			$wpls_insert_button_text = ( $wpls_page_flag ) ? __( 'Insert into page', 'wplocation' ) : __( 'Insert into post', 'wplocation' ) ;
+			$wpls_insert_button_text = ( $wpls_page_flag ) ? __( 'Insert into page', 'wpls' ) : __( 'Insert into post', 'wpls' ) ;
 			?>
 			<div id="wpls-google-map-container" class="mfp-hide">
-				<input id="wpls-map-search" class="wpls-place-search" type="text" placeholder="<?php echo __( 'Search Place', 'wplocation' ); ?>" />
+				<input id="wpls-map-search" class="wpls-place-search" type="text" placeholder="<?php echo __( 'Search Place', 'wpls' ); ?>" />
 				<div id="wpls-google-map"></div>
 				<div id="wpls-insert-map">
 					<select id="wpls-location-type">
-						<option value="">Select Location Type</option>
-						<option value="city">City</option>
-						<option value="state">State</option>
-						<option value="country">Country</option>
-						<option value="city-state">City + State</option>
-						<option value="city-country">City + Country</option>
-						<option value="state-country">State + Country</option>
-						<option value="city-state-country">City + State + Country</option>
-						<option value="full">Full Address</option>
+						<option value=""><?php _e( "Select Location Type", 'wpls' ); ?></option>
+						<option value="city"><?php _e( "City", 'wpls' ); ?></option>
+						<option value="state"><?php _e( "State", 'wpls' ); ?></option>
+						<option value="country"><?php _e( "Country", 'wpls' ); ?></option>
+						<option value="city-state"><?php _e( "City + State", 'wpls' ); ?></option>
+						<option value="city-country"><?php _e( "City + Country", 'wpls' ); ?></option>
+						<option value="state-country"><?php _e( "State + Country", 'wpls' ); ?></option>
+						<option value="city-state-country"><?php _e( "City + State + Country", 'wpls' ); ?></option>
+						<option value="full"><?php _e( "Full Address", 'wpls' ); ?></option>
 					</select>
 					<a href="#" id="wpls-insert-button" class="button button-primary button-large"><?php echo $wpls_insert_button_text; ?></a>
 					<input type="hidden" id="wpls-store-location" />

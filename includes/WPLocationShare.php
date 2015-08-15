@@ -30,7 +30,7 @@ if( !class_exists( 'WPLocationShare' ) ) {
 		 * Loading translations
 		 */
 		public function wpls_load_translation() {
-			load_plugin_textdomain( 'wplocation', false, basename( WP_LOCATION_SHARE_PATH ) . '/languages/' );
+			load_plugin_textdomain( 'wpls', false, basename( WP_LOCATION_SHARE_PATH ) . '/languages/' );
 		}
 
 	}
