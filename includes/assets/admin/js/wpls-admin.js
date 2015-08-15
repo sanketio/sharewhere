@@ -27,6 +27,8 @@ var wpls_location_types = new Array();
 			wpls_magnific_popup = jq.magnificPopup.instance;
 		},
 		wpls_google_map_intialize: function() {
+            jq( '#wpls-location-type').removeClass( 'wpls-location-type-error' );
+
 			var pune 	  = new google.maps.LatLng( 18.5204393, 73.8567347 );
 			var myOptions = {
 				zoom	  		  : 17,
