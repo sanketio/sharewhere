@@ -29,6 +29,9 @@
   text-overflow: ellipsis;
   width: 400px;
 }
+#wpls-google-map-container .wpls-location-type-error {
+  border: 2px solid red;
+}
 
 #wpls-google-map {
   height: -webkit-calc( 100% - 130px );

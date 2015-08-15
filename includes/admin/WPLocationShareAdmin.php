@@ -75,7 +75,7 @@ if( !class_exists( 'WPLocationShareAdmin' ) ) {
 				<div id="wpls-google-map"></div>
 				<div id="wpls-insert-map">
 					<select id="wpls-location-type">
-						<option value="">Select Location type</option>
+						<option value="">Select Location Type</option>
 						<option value="city">City</option>
 						<option value="state">State</option>
 						<option value="country">Country</option>

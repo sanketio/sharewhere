@@ -167,13 +167,37 @@ var wpls_location_types = new Array();
 		},
 		wpls_append_location: function( wpls_location_type ) {
 			if( wpls_location_type == '' ) {
-				wpls_location_type = 'full';
+				var wpls_confirm = confirm( "You haven't selected 'Location Type'.\n\nAre you sure you want to go with 'Full Address'?" );
+
+				if( wpls_confirm ) {
+					wpls_location_type = 'full';
+
+                    jq( '#wpls-location-type').removeClass( 'wpls-location-type-error' );
+				} else {
+					jq( '#wpls-location-type').addClass( 'wpls-location-type-error' );
+
+					return;
+				}
 			}
 
 			var location = wpls_object.wpls_final_location( wpls_location_type );
-			var link 	 = '<a title="' + location + '" href="https://google.com/maps?q=' + decodeURIComponent( location ) + '" target="_blank">' + location + '</a>';
+			var link    = "<a title='" + location + "' href='https://google.com/maps?q=" + decodeURIComponent( location ) + "' target='_blank'>" + location + "</a>";
 
-			jq( link ).appendTo( jq( '#wp-content-editor-container iframe' ).contents().find( 'body p:last-child' ) );
+			if( typeof tinymce != "undefined" ) {
+				var editor = tinymce.get( 'content' );
+
+				if( editor && editor instanceof tinymce.Editor ) {
+					var current_value = editor.getContent();
+
+					editor.setContent( current_value + ' ' + link );
+					editor.save( { no_events: true } );
+				}
+				else {
+					jQuery( 'textarea#content' ).val( jQuery( 'textarea#content' ).val() + ' ' + link );
+				}
+			}
+
+			jq( '#wpls-location-type' ).val( '' );
 
 			wpls_magnific_popup.close();
 		},
