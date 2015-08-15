@@ -2,9 +2,11 @@
   padding-left: 5px;
 }
 #wp-location-share-map i.dashicons-location {
-  padding-top: 3px;
+  vertical-align: middle;
+  padding-bottom: 3px;
   padding-right: 2px;
   color: #82878c;
+  margin-left: -5px;
 }
 
 #wpls-google-map-container {
@@ -27,7 +29,7 @@
   margin-left: 20px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 400px;
+  width: 80%;
 }
 #wpls-google-map-container .wpls-location-type-error {
   border: 2px solid red;
@@ -42,6 +44,7 @@
 #wpls-insert-map {
   float: right;
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 .pac-container {
@@ -49,4 +52,16 @@
 }
 .pac-container .pac-item {
   cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 450px) {
+  #wpls-google-map {
+    height: -webkit-calc( 100% - 170px );
+    height: calc( 100% - 170px );
+  }
+
+  #wpls-location-type {
+    margin-bottom: 5px;
+  }
 }
