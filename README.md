@@ -1,4 +1,4 @@
-=== WP Location Share ===
+=== ShareWhere ===
 
 Contributors      : sanketparmar, pranalipatel
 Requires at least : WordPress 4.0
