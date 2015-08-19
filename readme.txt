@@ -35,10 +35,10 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 == Changelog ==
 
 = 1.0 =
- * Inital Release
- * Share location using google map in post/page
- * Added Readme
+* Inital Release
+* Share location using google map in post/page
+* Added Readme
 
 == Roadmap ==
- * Share location in BuddyPress Activity
- * include map instead of location name
+* Share location in BuddyPress Activity
+* include map instead of location name
