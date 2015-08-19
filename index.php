@@ -3,7 +3,7 @@
 * Plugin Name: ShareWhere
 * Plugin URI: https://github.com/sanketio/sharewhere?utm_source=dashboard&utm_medium=plugin&utm_campaign=wp-location-share
 * Description: This plugin shares location.
-* Version: 1.0
+* Version: 1.0.1
 * Author: Pranali, Sanket
 * Text Domain: wpls
 * Author URI: https://github.com/sanketio/sharewhere?utm_source=dashboard&utm_medium=plugin&utm_campaign=wp-location-share
@@ -43,7 +43,7 @@ if( !defined( 'WP_LOCATION_SHARE_BASE_NAME' ) ) {
  * Plugin Version
  */
 if( !defined( 'WP_LOCATION_SHARE_VERSION' ) ) {
-	define( 'WP_LOCATION_SHARE_VERSION', '1.0' );
+	define( 'WP_LOCATION_SHARE_VERSION', '1.0.1' );
 }
 
 /**
