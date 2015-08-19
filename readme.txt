@@ -17,7 +17,7 @@ Do you want to share any location? ShareWhere plugin shares the location you wan
 
 You just need to search 'ShareWhere' in the search field. Once you’ve found our plugin you can view details about it such as the the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”.
 
-== FAQs ==
+== Frequently Asked Questions ==
 
 = Can I use my existing WordPress theme? =
 
@@ -37,6 +37,7 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 = 1.0 =
  * Inital Release
  * Share location using google map in post/page
+ * Added Readme
 
 == Roadmap ==
  * Share location in BuddyPress Activity
