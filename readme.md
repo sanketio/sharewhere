@@ -6,8 +6,8 @@ Using ShareWhere plugin you can share your location in post/page using google ma
 **Contributors:** [sanketparmar](https://profiles.wordpress.org/sanketparmar), [pranalipatel](https://profiles.wordpress.org/pranalipatel)  
 **Tags:** [location](https://wordpress.org/plugins/tags/location), [share](https://wordpress.org/plugins/tags/share), [map](https://wordpress.org/plugins/tags/map), [google map](https://wordpress.org/plugins/tags/google map), [google](https://wordpress.org/plugins/tags/google), [location share](https://wordpress.org/plugins/tags/location share), [wp location share](https://wordpress.org/plugins/tags/wp location share), [locator](https://wordpress.org/plugins/tags/locator), [geo locator](https://wordpress.org/plugins/tags/geo locator), [Addresses](https://wordpress.org/plugins/tags/Addresses), [Add location](https://wordpress.org/plugins/tags/Add location)  
 **Requires at least:** WordPress 4.0  
-**Tested up to:** WordPress 4.2.4  
-**Stable tag:** 1.0  
+**Tested up to:** WordPress 4.3  
+**Stable tag:** 1.0.1  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
 ## Description ##
@@ -16,7 +16,16 @@ Do you want to share any location? ShareWhere plugin shares the location you wan
 
 ## Installation ##
 
-You just need to search 'ShareWhere' in the search field. Once you’ve found our plugin you can view details about it such as the the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”.
+### From your WordPress dashboard ###
+1. Visit 'Plugins > Add New'
+2. Search for 'ShareWhere'
+3. Activate ShareWhere from your Plugins page.
+
+### From WordPress.org ###
+1. Download ShareWhere.
+2. Upload the 'sharewhere' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+3. Activate ShareWhere from your Plugins page.
+
 
 ## Frequently Asked Questions ##
 
@@ -52,10 +61,21 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 
 ## Changelog ##
 
-### 1.0 ###
+### 1.0.1 - Aug 20, 2015 ###
 * Inital Release
 * Share location using google map in post/page
 * Added Readme
+
+### 1.0 - Aug 20, 2015 ###
+* Inital Release
+* Share location using google map in post/page
+* Added Readme
+
+
+## Upgrade Notice ##
+
+### 1.0.1 - Aug 20, 2015 ###
+Removed unwanted code
 
 
 ## Roadmap ##
