@@ -1,3 +1,7 @@
 .idea
 node_modules
 .sass-cache
+.svn
+trunk
+tags
+branches
