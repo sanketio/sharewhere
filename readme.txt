@@ -15,7 +15,17 @@ Do you want to share any location? ShareWhere plugin shares the location you wan
 
 == Installation ==
 
-You just need to search 'ShareWhere' in the search field. Once you’ve found our plugin you can view details about it such as the the point release, rating and description. Most importantly of course, you can install it by simply clicking “Install Now”.
+= From your WordPress dashboard =
+
+1. Visit 'Plugins > Add New'
+2. Search for 'ShareWhere'
+3. Activate ShareWhere from your Plugins page.
+
+= From WordPress.org =
+
+1. Download ShareWhere.
+2. Upload the 'sharewhere' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+3. Activate ShareWhere from your Plugins page.
 
 == Frequently Asked Questions ==
 

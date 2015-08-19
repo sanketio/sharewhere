@@ -5,3 +5,4 @@ node_modules
 trunk
 tags
 branches
+*.sass-cache

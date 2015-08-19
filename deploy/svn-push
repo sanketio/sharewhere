@@ -121,9 +121,11 @@ rsync -avz --delete --delete-excluded \
 	--exclude '/.jshint*' \
 	--exclude '/.travis.yml' \
 	--exclude '/assets' \
-	--exclude '/dev-lib' \
+	--exclude '/deploy' \
 	--exclude '/svn-url' \
 	--exclude 'phpunit.xml*' \
+	--exclude '/.sass-cache*' \
+	--exclude '/includes/assets/admin/css/sass*' \
 	$git_tmp_repo_dir/ $svn_tmp_repo_dir/trunk/
 if [ -e $git_tmp_repo_dir/assets/ ]; then
 	mkdir -p $svn_tmp_repo_dir/assets/
