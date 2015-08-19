@@ -24,6 +24,15 @@ You just need to search 'ShareWhere' in the search field. Once you’ve found ou
 
 Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 
+== Screenshots ==
+
+1. Add Location
+2. Google Map
+3. Search Places
+4. Location Type
+5. After insert into post/page
+6. Location on frontend
+
 == Changelog ==
 
 = 1.0 =
