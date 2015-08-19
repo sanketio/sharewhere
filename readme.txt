@@ -1,5 +1,4 @@
 === ShareWhere ===
-
 Contributors: sanketparmar, pranalipatel
 Tags: location, share, map, google map, google, location share, wp location share, locator, geo locator, Addresses, Add location
 Requires at least: WordPress 4.0
