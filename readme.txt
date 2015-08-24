@@ -45,9 +45,7 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 == Changelog ==
 
 = 1.0.1 - Aug 20, 2015 =
-* Inital Release
-* Share location using google map in post/page
-* Added Readme
+* Removed unwanted code
 
 = 1.0 - Aug 20, 2015 =
 * Inital Release
