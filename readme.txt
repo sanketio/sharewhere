@@ -44,6 +44,9 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 
 == Changelog ==
 
+= 1.1 - Aug 31, 2015 =
+* Add Location in WordPress Comment
+
 = 1.0.1 - Aug 20, 2015 =
 * Removed unwanted code
 
@@ -59,4 +62,5 @@ Removed unwanted code
 
 == Roadmap ==
 * Share location in BuddyPress Activity
+* Share location in bbPress Forums
 * include map instead of location name
