@@ -1,0 +1,82 @@
+/* Importing WordPress comment SCSS */
+.wpls-add-location-button .button {
+  color: #555;
+  border-color: #cccccc;
+  background: #f7f7f7;
+  box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba(0, 0, 0, 0.08);
+  vertical-align: top;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 10px 1px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Google Map */
+#wp-location-share-map {
+  padding-left: 5px;
+}
+#wp-location-share-map i.dashicons-location {
+  vertical-align: middle;
+  margin-bottom: 1px;
+  color: #82878c;
+}
+
+#wpls-google-map-container {
+  height: 100%;
+}
+#wpls-google-map-container .wpls-place-search {
+  margin-top: 15px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+#wpls-google-map-container #wpls-map-search {
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 20px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+#wpls-google-map-container .wpls-location-type-error {
+  border: 2px solid red;
+}
+
+#wpls-google-map {
+  height: -webkit-calc( 100% - 130px );
+  height: calc( 100% - 130px );
+  margin: 15px 20px 20px;
+}
+
+#wpls-insert-map {
+  float: right;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.pac-container {
+  z-index: 999999 !important;
+}
+.pac-container .pac-item {
+  cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 450px) {
+  #wpls-google-map {
+    height: -webkit-calc( 100% - 170px );
+    height: calc( 100% - 170px );
+  }
+
+  #wpls-location-type {
+    margin-bottom: 5px;
+  }
+}

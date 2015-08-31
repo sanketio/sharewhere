@@ -9,15 +9,15 @@ module.exports = function ( grunt ) {
 		// watch for changes and trigger sass, jshint, uglify and livereload
 		watch: {
 			sass: {
-				files: [ 'includes/assets/admin/css/sass/**/*.{scss,sass}' ],
+				files: [ 'includes/assets/admin/css/sass/**/*.{scss,sass}', 'includes/assets/main/css/sass/**/*.{scss,sass}' ],
 				tasks: [ 'sass' ]
 			},
 			autoprefixer: {
-				files: [ 'includes/assets/admin/css/*.css' ],
+				files: [ 'includes/assets/admin/css/*.css', 'includes/assets/main/css/*.css' ],
 				tasks: [ 'autoprefixer' ]
 			},
 			js: {
-				files: [ '<%= uglify.backend.src %>' ],
+				files: [ '<%= uglify.backend.src %>', '<%= uglify.frontend.src %>' ],
 				tasks: [ 'uglify' ]
 			},
 			livereload: {
@@ -35,7 +35,8 @@ module.exports = function ( grunt ) {
 					sourcemap: 'none'
 				},
 				files: {
-					'includes/assets/admin/css/wpls-admin.css': 'includes/assets/admin/css/sass/wpls-admin.scss'
+					'includes/assets/admin/css/wpls-admin.css': 'includes/assets/admin/css/sass/wpls-admin.scss',
+					'includes/assets/main/css/wpls.css': 'includes/assets/main/css/sass/wpls.scss'
 				}
 			},
 			minify: {
@@ -45,6 +46,7 @@ module.exports = function ( grunt ) {
 				},
 				files: {
 					'includes/assets/admin/css/wpls-admin.min.css': 'includes/assets/admin/css/sass/wpls-admin.scss',
+					'includes/assets/main/css/wpls.min.css': 'includes/assets/main/css/sass/wpls.scss'
 				}
 			}
 		},
@@ -58,7 +60,9 @@ module.exports = function ( grunt ) {
 				},
 				files: {
 					'includes/assets/admin/css/wpls-admin.css': 'includes/assets/admin/css/wpls-admin.css',
-					'includes/assets/admin/css/wpls-admin.min.css': 'includes/assets/admin/css/wpls-admin.min.css'
+					'includes/assets/admin/css/wpls-admin.min.css': 'includes/assets/admin/css/wpls-admin.min.css',
+					'includes/assets/main/css/wpls.css': 'includes/assets/main/css/wpls.css',
+					'includes/assets/main/css/wpls.min.css': 'includes/assets/main/css/wpls.min.css'
 				}
 			}
 		},
@@ -72,6 +76,12 @@ module.exports = function ( grunt ) {
 					'includes/assets/admin/js/wpls-admin.js'
 				],
 				dest: 'includes/assets/admin/js/wpls-admin.min.js'
+			},
+			frontend: {
+				src: [
+					'includes/assets/main/js/wpls.js'
+				],
+				dest: 'includes/assets/main/js/wpls.min.js'
 			}
 		},
 		checktextdomain: {
