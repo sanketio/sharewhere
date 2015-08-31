@@ -11,7 +11,9 @@ Using ShareWhere plugin you can share your location in post/page using google ma
 
 == Description ==
 
-Do you want to share any location? ShareWhere plugin shares the location you want. You just have to select location in google map and insert that location into post/page.
+Do you want to share any location? ShareWhere plugin shares the location you want.
+
+You just have to select location in google map and insert that location into post/page.
 
 == Installation ==
 
@@ -41,6 +43,7 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 4. Location Type
 5. After insert into post/page
 6. Location on frontend
+7. Add Location in WordPress Comment
 
 == Changelog ==
 
@@ -57,8 +60,8 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 
 == Upgrade Notice ==
 
-= 1.0.1 - Aug 20, 2015 =
-Removed unwanted code
+= 1.1 - Aug 31, 2015 =
+Add Location in WordPress Comment
 
 == Roadmap ==
 * Share location in BuddyPress Activity
