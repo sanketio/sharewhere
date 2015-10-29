@@ -76,13 +76,13 @@ if( !class_exists( 'WPLocationShare' ) ) {
 			wp_enqueue_script( 'google-jsapi', 'https://www.google.com/jsapi' );
 
 			$wpls_main_localize_string = array(
-				'wpls_main_geolocation_service_failed' => __( 'Geolocation service failed.', 'wpls' ),
-				'wpls_main_geolocation_not_supported_browser' => __( "Your browser doesn't support geolocation. We've placed you in Pune, India.", 'wpls' ),
-				'wpls_main_no_result_found' => __( 'No results found', 'wpls' ),
-				'wpls_main_geocoder_failed' => __( 'Geocoder failed due to:', 'wpls' ),
-				'wpls_main_not_determine_location' => __( 'Cannot determine address at this location.', 'wpls' ),
-				'wpls_main_autocomplete_no_geometry' => __( "Autocomplete's returned place contains no geometry", 'wpls' ),
-				'wpls_main_full_address_confirmation' => __( "You haven't selected 'Location Type'.\n\nAre you sure you want to go with 'Full Address'?", 'wpls' )
+				'wpls_main_geolocation_service_failed' => __( 'Geolocation service failed.', 'sharewhere' ),
+				'wpls_main_geolocation_not_supported_browser' => __( "Your browser doesn't support geolocation. We've placed you in Pune, India.", 'sharewhere' ),
+				'wpls_main_no_result_found' => __( 'No results found', 'sharewhere' ),
+				'wpls_main_geocoder_failed' => __( 'Geocoder failed due to:', 'sharewhere' ),
+				'wpls_main_not_determine_location' => __( 'Cannot determine address at this location.', 'sharewhere' ),
+				'wpls_main_autocomplete_no_geometry' => __( "Autocomplete's returned place contains no geometry", 'sharewhere' ),
+				'wpls_main_full_address_confirmation' => __( "You haven't selected 'Location Type'.\n\nAre you sure you want to go with 'Full Address'?", 'sharewhere' )
 			);
 
 			wp_localize_script( "wpls-main", 'wpls_main_strings', $wpls_main_localize_string );
