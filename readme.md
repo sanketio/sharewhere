@@ -7,7 +7,7 @@ Using ShareWhere plugin you can share your location in post/page using google ma
 **Contributors:** [littlemonks](https://profiles.wordpress.org/littlemonks), [pranalipatel](https://profiles.wordpress.org/pranalipatel), [sanket.parmar](https://profiles.wordpress.org/sanket.parmar)  
 **Tags:** [location](https://wordpress.org/plugins/tags/location), [share](https://wordpress.org/plugins/tags/share), [map](https://wordpress.org/plugins/tags/map), [google map](https://wordpress.org/plugins/tags/google map), [google](https://wordpress.org/plugins/tags/google), [location share](https://wordpress.org/plugins/tags/location share), [wp location share](https://wordpress.org/plugins/tags/wp location share), [locator](https://wordpress.org/plugins/tags/locator), [geo locator](https://wordpress.org/plugins/tags/geo locator), [Addresses](https://wordpress.org/plugins/tags/Addresses), [Add location](https://wordpress.org/plugins/tags/Add location)  
 **Requires at least:** WordPress 4.0  
-**Tested up to:** WordPress 4.3  
+**Tested up to:** WordPress 4.3.1  
 **Stable tag:** 1.2  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
