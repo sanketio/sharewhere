@@ -1,9 +1,9 @@
 === ShareWhere ===
-Contributors: sanketparmar, pranalipatel
+Contributors: littlemonks, pranalipatel, sanket.parmar
 Tags: location, share, map, google map, google, location share, wp location share, locator, geo locator, Addresses, Add location
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.3
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,8 +44,12 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 5. After insert into post/page
 6. Location on frontend
 7. Add Location in WordPress Comment
+8. Add Location in BuddyPress Activity
 
 == Changelog ==
+
+= 1.2 - Oct 30, 2015 =
+* Add Location in BuddyPress Activity
 
 = 1.1 - Aug 31, 2015 =
 * Add Location in WordPress Comment
@@ -60,10 +64,10 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 
 == Upgrade Notice ==
 
-= 1.1 - Aug 31, 2015 =
-Add Location in WordPress Comment
+= 1.2 - Oct 30, 2015 =
+Add Location in BuddyPress Activity
 
 == Roadmap ==
-* Share location in BuddyPress Activity
+* Share location in BuddyPress Comments
 * Share location in bbPress Forums
 * include map instead of location name
