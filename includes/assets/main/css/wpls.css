@@ -69,6 +69,13 @@
   cursor: pointer;
 }
 
+/* BuddyPress */
+#wp-location-share-map {
+  padding: 2px 6px !important;
+  position: absolute;
+  margin-top: 15px;
+}
+
 /* Responsive */
 @media screen and (max-width: 450px) {
   #wpls-google-map {

@@ -17,24 +17,26 @@ if( !class_exists( 'WPLocationShare' ) ) {
 		 * Constructor
 		 */
 		public function __construct() {
+			// Including functions file
+			require_once WP_LOCATION_SHARE_PATH . 'includes/functions/wpls-functions.php';
+
 			$this->suffix = ( function_exists( 'wpls_get_script_style_suffix' ) ) ? wpls_get_script_style_suffix() : '.min';
 
 			$this->wpls_load_translation();
 
-			add_action( 'plugins_loaded', array( $this, 'wpls_create_admin_object' ) );
+			add_action( 'plugins_loaded', array( $this, 'wpls_create_class_instances' ) );
 			add_action( 'plugins_loaded', array( $this, 'wpls_load_classes' ) );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'wpls_includes_styles' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'wpls_includes_scripts' ), 11 );
 
-			// Including functions file
-			require_once WP_LOCATION_SHARE_PATH . 'includes/functions/wpls-functions.php';
+			add_action( 'wp_footer',  array( $this, 'wpls_google_map_div' ) );
 		}
 
 		/*
 		 * Creating WPLocationShareAdmin object
 		 */
-		public function wpls_create_admin_object() {
+		public function wpls_create_class_instances() {
 			new WPLocationShareAdmin();
 		}
 
@@ -86,6 +88,36 @@ if( !class_exists( 'WPLocationShare' ) ) {
 			);
 
 			wp_localize_script( "wpls-main", 'wpls_main_strings', $wpls_main_localize_string );
+		}
+
+		/*
+		 * Google map div for modal popup
+		 */
+		public function wpls_google_map_div() {
+			?>
+			<div id="wpls-google-map-container" class="mfp-hide">
+				<input id="wpls-map-search" class="wpls-place-search" type="text" placeholder="<?php echo __( 'Search Place', 'sharewhere' ); ?>" />
+				<div id="wpls-google-map"></div>
+				<div id="wpls-insert-map">
+					<select id="wpls-location-type">
+						<option value=""><?php _e( "Select Location Type", 'sharewhere' ); ?></option>
+						<option value="city"><?php _e( "City", 'sharewhere' ); ?></option>
+						<option value="state"><?php _e( "State", 'sharewhere' ); ?></option>
+						<option value="country"><?php _e( "Country", 'sharewhere' ); ?></option>
+						<option value="city-state"><?php _e( "City + State", 'sharewhere' ); ?></option>
+						<option value="city-country"><?php _e( "City + Country", 'sharewhere' ); ?></option>
+						<option value="state-country"><?php _e( "State + Country", 'sharewhere' ); ?></option>
+						<option value="city-state-country"><?php _e( "City + State + Country", 'sharewhere' ); ?></option>
+						<option value="full"><?php _e( "Full Address", 'sharewhere' ); ?></option>
+					</select>
+					<a href="" id="wpls-insert-button" class="button button-primary button-large"><?php echo __( 'Insert', 'sharewhere' ); ?></a>
+					<input type="hidden" id="wpls-store-location" />
+					<input type="hidden" id="wpls-city" />
+					<input type="hidden" id="wpls-state" />
+					<input type="hidden" id="wpls-country" />
+				</div>
+			</div>
+			<?php
 		}
 
 	}

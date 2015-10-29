@@ -183,9 +183,13 @@ var wpls_main_location_types = new Array();
 			}
 
 			var location = wpls_main_object.wpls_main_final_location( wpls_location_type );
-			var link    = "<a title='" + location + "' href='https://google.com/maps?q=" + decodeURIComponent( location ) + "' target='_blank'>" + location + "</a>";
+			var link    = '<a class="wpls-map" title="' + location + '" href="https://google.com/maps?q=' + decodeURIComponent( location ) + '" target="_blank">' + location + '</a>';
 
-			jQuery( 'textarea#comment' ).val( jQuery( 'textarea#comment' ).val() + ' ' + link );
+			if( jQuery( 'textarea#comment' ).length > 0 ) {
+				jQuery( 'textarea#comment' ).val( jQuery( 'textarea#comment' ).val() + ' ' + link );
+			} else if( jQuery( 'textarea#whats-new' ).length > 0 ) {
+				jQuery( 'textarea#whats-new' ).val( jQuery( 'textarea#whats-new' ).val() + ' ' + link );
+			}
 
 			jq( '#wpls-location-type' ).val( '' );
 
@@ -213,7 +217,9 @@ var wpls_main_location_types = new Array();
 	jq( 'document' ).ready( function() {
 		wpls_main_object.main_init();
 
-		jq( '#wpls-insert-button' ).click( function() {
+		jq( '#wpls-insert-button' ).click( function( e ) {
+			e.preventDefault();
+
 			var wpls_location_type = jq( '#wpls-location-type' ).val();
 
 			wpls_main_object.wpls_main_append_location( wpls_location_type );

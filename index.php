@@ -62,7 +62,8 @@ function wp_location_share_autoloader( $class_name ) {
 	$wp_location_share_path = array(
 		'includes/' . $class_name . '.php',
 		'includes/admin/' . $class_name . '.php',
-		'includes/comment/' . $class_name . '.php'
+		'includes/comment/' . $class_name . '.php',
+		'includes/buddypress/' . $class_name . '.php'
 	);
 
 	foreach( $wp_location_share_path as $path ) {
@@ -83,6 +84,7 @@ add_filter( 'wpls_class_construct', 'wpls_class_construct' );
 
 function wpls_class_construct( $wpls_class_construct ) {
 	array_push( $wpls_class_construct, 'WPLSWordPressComment' );
+	array_push( $wpls_class_construct, 'WPLocationShareBuddyPress' );
 
 	return $wpls_class_construct;
 }
