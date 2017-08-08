@@ -38,37 +38,41 @@ Yes! ShareWhere works out-of-the-box with nearly every WordPress theme.
 
 ## Screenshots ##
 
+### Settings
+
+![Settings](assets/screenshot-1.png)
+
 ### Add Location
 
-![Add Location](assets/screenshot-1.png)
+![Add Location](assets/screenshot-2.png)
 
 ### Google Map
 
-![Google Map](assets/screenshot-2.png)
+![Google Map](assets/screenshot-3.png)
 
 ### Search Places
 
-![Search Places](assets/screenshot-3.png)
+![Search Places](assets/screenshot-4.png)
 
 ### Location Type
 
-![Location Type](assets/screenshot-4.png)
+![Location Type](assets/screenshot-5.png)
 
 ### After insert into post/page
 
-![After insert into post/page](assets/screenshot-5.png)
+![After insert into post/page](assets/screenshot-6.png)
 
 ### Location on frontend
 
-![Location on frontend](assets/screenshot-6.png)
+![Location on frontend](assets/screenshot-7.png)
 
 ### Add Location in WordPress Comment
 
-![Add Location in WordPress Comment](assets/screenshot-7.png)
+![Add Location in WordPress Comment](assets/screenshot-8.png)
 
 ### Add Location in BuddyPress Activity
 
-![Add Location in BuddyPress Activity](assets/screenshot-8.png)
+![Add Location in BuddyPress Activity](assets/screenshot-9.png)
 
 ## Changelog ##
 

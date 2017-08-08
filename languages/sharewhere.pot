@@ -1,132 +1,99 @@
-# Copyright (C) 2015 littlemonks
-# This file is distributed under the GPLv2 or Later.
+# Copyright (C) 2017 ShareWhere
+# This file is distributed under the same license as the ShareWhere package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ShareWhere 1.2\n"
-"Report-Msgid-Bugs-To: http://ps.com/\n"
-"POT-Creation-Date: 2015-10-29 19:12:35+00:00\n"
+"Project-Id-Version: ShareWhere\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Sanket <sanket.parmar11@gmail.com>\n"
-"Language-Team: Sanket <sanket.parmar11@gmail.com>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
-"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Country: United States\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-Bookmarks: \n"
-"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/WPLocationShare.php:81 includes/admin/WPLocationShareAdmin.php:46
+#: admin/class-sharewhere-admin.php:118, public/class-sharewhere-public.php:112
 msgid "Geolocation service failed."
 msgstr ""
 
-#: includes/WPLocationShare.php:82 includes/admin/WPLocationShareAdmin.php:47
+#: admin/class-sharewhere-admin.php:119, public/class-sharewhere-public.php:113
 msgid "Your browser doesn't support geolocation. We've placed you in Pune, India."
 msgstr ""
 
-#: includes/WPLocationShare.php:83 includes/admin/WPLocationShareAdmin.php:48
+#: admin/class-sharewhere-admin.php:120, public/class-sharewhere-public.php:114
 msgid "No results found"
 msgstr ""
 
-#: includes/WPLocationShare.php:84 includes/admin/WPLocationShareAdmin.php:49
+#: admin/class-sharewhere-admin.php:121, public/class-sharewhere-public.php:115
 msgid "Geocoder failed due to:"
 msgstr ""
 
-#: includes/WPLocationShare.php:85 includes/admin/WPLocationShareAdmin.php:50
+#: admin/class-sharewhere-admin.php:122, public/class-sharewhere-public.php:116
 msgid "Cannot determine address at this location."
 msgstr ""
 
-#: includes/WPLocationShare.php:86 includes/admin/WPLocationShareAdmin.php:51
+#: admin/class-sharewhere-admin.php:123, public/class-sharewhere-public.php:117
 msgid "Autocomplete's returned place contains no geometry"
 msgstr ""
 
-#: includes/WPLocationShare.php:87 includes/admin/WPLocationShareAdmin.php:52
-msgid ""
-"You haven't selected 'Location Type'.\n"
-"\n"
-"Are you sure you want to go with 'Full Address'?"
+#: admin/class-sharewhere-admin.php:124, public/class-sharewhere-public.php:118
+msgid "You haven't selected 'Location Type'.nnAre you sure you want to go with 'Full Address'?"
 msgstr ""
 
-#: includes/WPLocationShare.php:99 includes/admin/WPLocationShareAdmin.php:86
-msgid "Search Place"
-msgstr ""
-
-#: includes/WPLocationShare.php:103 includes/admin/WPLocationShareAdmin.php:90
-msgid "Select Location Type"
-msgstr ""
-
-#: includes/WPLocationShare.php:104 includes/admin/WPLocationShareAdmin.php:91
-msgid "City"
-msgstr ""
-
-#: includes/WPLocationShare.php:105 includes/admin/WPLocationShareAdmin.php:92
-msgid "State"
-msgstr ""
-
-#: includes/WPLocationShare.php:106 includes/admin/WPLocationShareAdmin.php:93
-msgid "Country"
-msgstr ""
-
-#: includes/WPLocationShare.php:107 includes/admin/WPLocationShareAdmin.php:94
-msgid "City + State"
-msgstr ""
-
-#: includes/WPLocationShare.php:108 includes/admin/WPLocationShareAdmin.php:95
-msgid "City + Country"
-msgstr ""
-
-#: includes/WPLocationShare.php:109 includes/admin/WPLocationShareAdmin.php:96
-msgid "State + Country"
-msgstr ""
-
-#: includes/WPLocationShare.php:110 includes/admin/WPLocationShareAdmin.php:97
-msgid "City + State + Country"
-msgstr ""
-
-#: includes/WPLocationShare.php:111 includes/admin/WPLocationShareAdmin.php:98
-msgid "Full Address"
-msgstr ""
-
-#: includes/WPLocationShare.php:113
-msgid "Insert"
-msgstr ""
-
-#: includes/admin/WPLocationShareAdmin.php:62
-#: includes/buddypress/WPLocationShareBuddyPress.php:17
-#: includes/comment/WPLSWordPressComment.php:22
+#: admin/class-sharewhere-admin.php:140, public/class-sharewhere-buddypress.php:45, public/class-sharewhere-public.php:158
 msgid "Add Location"
 msgstr ""
 
-#: includes/admin/WPLocationShareAdmin.php:83
+#: admin/class-sharewhere-admin.php:168
 msgid "Insert into page"
 msgstr ""
 
-#: includes/admin/WPLocationShareAdmin.php:83
+#: admin/class-sharewhere-admin.php:168
 msgid "Insert into post"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "ShareWhere"
+#: admin/class-sharewhere-admin.php:171, public/class-sharewhere-public.php:129
+msgid "Search Place"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid ""
-"https://github.com/sanketio/sharewhere?utm_source=dashboard&utm_medium="
-"plugin&utm_campaign=wp-location-share"
+#: admin/class-sharewhere-admin.php:175, public/class-sharewhere-public.php:133
+msgid "Select Location Type"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid "This plugin shares location."
+#: admin/class-sharewhere-admin.php:176, public/class-sharewhere-public.php:134
+msgid "City"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "littlemonks"
+#: admin/class-sharewhere-admin.php:177, public/class-sharewhere-public.php:135
+msgid "State"
+msgstr ""
+
+#: admin/class-sharewhere-admin.php:178, public/class-sharewhere-public.php:136
+msgid "Country"
+msgstr ""
+
+#: admin/class-sharewhere-admin.php:179, public/class-sharewhere-public.php:137
+msgid "City + State"
+msgstr ""
+
+#: admin/class-sharewhere-admin.php:180, public/class-sharewhere-public.php:138
+msgid "City + Country"
+msgstr ""
+
+#: admin/class-sharewhere-admin.php:181, public/class-sharewhere-public.php:139
+msgid "State + Country"
+msgstr ""
+
+#: admin/class-sharewhere-admin.php:182, public/class-sharewhere-public.php:140
+msgid "City + State + Country"
+msgstr ""
+
+#: admin/class-sharewhere-admin.php:183, public/class-sharewhere-public.php:141
+msgid "Full Address"
+msgstr ""
+
+#: public/class-sharewhere-public.php:144
+msgid "Insert"
 msgstr ""

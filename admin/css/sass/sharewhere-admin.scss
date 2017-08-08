@@ -1,17 +1,19 @@
-#wp-location-share-map {
+#sw-map {
 	padding-left: 5px;
 
 	i.dashicons-location {
 		vertical-align: middle;
-		margin-bottom: 1px;
+		padding-bottom: 3px;
+		padding-right: 2px;
 		color: #82878c;
+		margin-left: -5px;
 	}
 }
 
-#wpls-google-map-container {
+#sw-google-map-container {
 	height: 100%;
 
-	.wpls-place-search {
+	.sw-place-search {
 		margin-top: 15px;
 		border: 1px solid transparent;
 		border-radius: 2px 0 0 2px;
@@ -22,7 +24,7 @@
 		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 	}
 
-	#wpls-map-search {
+	#sw-map-search {
 		background-color: #fff;
 		font-size: 15px;
 		font-weight: 300;
@@ -32,17 +34,18 @@
 		width: 80%;
 	}
 
-	.wpls-location-type-error {
+	.sw-location-type-error {
 		border: 2px solid red;
 	}
 }
 
-#wpls-google-map {
-	height: calc( 100% - 130px );
+#sw-google-map {
+	height: -webkit-calc(100% - 130px);
+	height: calc(100% - 130px);
 	margin: 15px 20px 20px;
 }
 
-#wpls-insert-map {
+#sw-insert-map {
 	float: right;
 	margin-right: 20px;
 	margin-left: 20px;
@@ -54,4 +57,28 @@
 	.pac-item {
 		cursor: pointer;
 	}
+}
+
+#google_map_api_key {
+	min-width: 350px;
+}
+
+.sharewhere-components {
+	td:first-of-type {
+		padding-left: 0;
+	}
+}
+
+/* Responsive */
+@media screen and (max-width: 450px) {
+
+	#sw-google-map {
+		height: -webkit-calc(100% - 170px);
+		height: calc(100% - 170px);
+	}
+
+	#sw-location-type {
+		margin-bottom: 5px;
+	}
+
 }

@@ -6,3 +6,4 @@ trunk
 tags
 branches
 *.sass-cache
+.DS_Store

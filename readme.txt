@@ -2,12 +2,12 @@
 Contributors: littlemonks, pranalipatel, sanket.parmar
 Tags: location, share, map, google map, google, location share, wp location share, locator, geo locator, Addresses, Add location
 Requires at least: WordPress 4.0
-Tested up to: WordPress 4.3.1
+Tested up to: WordPress 4.8
 Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Using ShareWhere plugin you can share your location in post/page using google map.
+Using ShareWhere plugin you can share your location using google map.
 
 == Description ==
 
